@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { buyCake } from '../redux'
+import { buyIcecream } from '../redux'
 
-class CakeContainer extends Component {
+class IceCreamContainer extends Component {
     constructor(props) {
         super(props)
 
@@ -14,8 +14,8 @@ class CakeContainer extends Component {
         return (
             <div>
                 <h1>Class componet</h1>
-                <h3>No of cakes - {this.props.noOfCakes}</h3>
-                <button onClick={() => this.props.buyCake(2)}>Buy cakes</button>
+                <h3>No of icecreams - {this.props.noOfIcecreams}</h3>
+                <button onClick={() => this.props.buyIcecream(2)}>Buy icecreams</button>
             </div>
         )
     }
@@ -24,15 +24,15 @@ class CakeContainer extends Component {
 // it will link global state to local props
 const mapStateToProps = (state) => {
     return {
-        noOfCakes: state.cake.noOfCakes
+        noOfIcecreams: state.icecream.noOfIcecreams
     }
 }
 // it will link actions to local props
 const mapDispatchToProps = (dispatch) => {
     return {
-        buyCake: (val) => dispatch(buyCake(val))
+        buyIcecream: (val) => dispatch(buyIcecream(val))
     }
 }
 
 // connect is predefined HOC
-export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(IceCreamContainer)

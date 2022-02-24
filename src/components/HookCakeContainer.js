@@ -6,7 +6,7 @@ import { buyCake } from '../redux'
 
 function HookCakeContainer(props) {
     // similar to mapStateToProps
-    const noOfCakes = useSelector(state => state.noOfCakes);
+    const noOfCakes = useSelector(state => state.cake.noOfCakes);
      // similar to mapDispatchToProps
     const dispatch = useDispatch();
 
